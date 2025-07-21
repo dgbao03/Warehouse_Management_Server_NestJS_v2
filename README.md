@@ -9,19 +9,23 @@ The system provides core features such as inventory tracking, warehouse transfer
 Besides these core features, the system is built with a focus on reliability, and security:
 
 - **User Authentication & Authorization**  
-  JWT-based authentication is used to securely manage login/logout. Each endpoint is protected using Role-Based Access Control (RBAC) to ensure users only access permitted resources.
+  JWT-based authentication with Access and Refresh Tokens is used for securely managing user sessions, supporting short-lived access tokens for API security and long-lived refresh tokens for seamless re-authentication without requiring frequent logins. This mechanism enhances both security and user experience by limiting token lifespan while allowing session continuity.
 
   The system implements JWT blacklisting, which enables invalidation of tokens after logout. This approach prevents unauthorized access using previously issued tokens and adds an important security layer beyond standard stateless JWT handling.
+
+  Each endpoint is protected using Role-Based Access Control (RBAC) to ensure users only access permitted resources.
 
 - **Flexible RBAC (Role-Based Access Control)**  
   Roles and permissions are fully customizable per tenant, allowing fine-grained access to each feature based on business requirements.
   A user can be assigned multiple roles, and custom roles can be created to fit specific organizational needs.
 
 - **Multi-Tenant Architecture**  
-  Each store operates in a logically isolated context, ensuring data privacy. Tenant resolution is handled contextually, and database queries are scoped accordingly.
+  Each store (tenant) operates in a logically isolated context, ensuring data privacy and security. The system uses a shared schema approach, where all tenants share the same database schema and tables, but their data is logically separated using a tenant identifier (e.g., tenant_id) on every relevant record.
+
+  Tenant resolution is handled contextually based on the authenticated user's session, typically by extracting the tenant information from the JWT or request headers. All database queries are automatically scoped to the correct tenant to ensure that one tenant cannot access or affect another tenant's data.
 
 - **Race Condition Handling**  
-  The system uses transaction management and locking strategies to ensure consistent inventory values, even in high-concurrency scenarios like simultaneous import/export.
+  The system uses transaction management and locking strategies (Row-level locking) to ensure consistent inventory values, even in high-concurrency scenarios like simultaneous import/export.
 
 - **Email Alerts & Automation**  
   Admins receive email alerts for low-stock levels or critical inventory updates. Auto-reordering can be configured for essential items to ensure smooth operations.

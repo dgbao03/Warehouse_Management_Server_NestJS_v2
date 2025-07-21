@@ -20,8 +20,8 @@ Besides these core features, the system is built with a focus on reliability, an
 - **Race Condition Handling**  
   The system uses transaction management and locking strategies to ensure consistent inventory values, even in high-concurrency scenarios like simultaneous import/export.
 
-- **Real-Time Notifications & Automation**  
-  Admins receive alerts for low-stock levels or critical updates. Auto-reordering can be configured for essential inventory items.
+- **Email Alerts & Automation**  
+  Admins receive email alerts for low-stock levels or critical inventory updates. Auto-reordering can be configured for essential items to ensure smooth operations.
 
 ## Technical Stack
 

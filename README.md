@@ -11,6 +11,8 @@ Besides these core features, the system is built with a focus on reliability, an
 - **User Authentication & Authorization**  
   JWT-based authentication is used to securely manage login/logout. Each endpoint is protected using Role-Based Access Control (RBAC) to ensure users only access permitted resources.
 
+  The system implements JWT blacklisting, which enables invalidation of tokens after logout. This approach prevents unauthorized access using previously issued tokens and adds an important security layer beyond standard stateless JWT handling.
+
 - **Flexible RBAC (Role-Based Access Control)**  
   Roles and permissions are fully customizable per tenant, allowing fine-grained access to each feature based on business requirements.
   A user can be assigned multiple roles, and custom roles can be created to fit specific organizational needs.

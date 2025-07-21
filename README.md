@@ -2,9 +2,9 @@
 
 ## Project Description
 
-The Warehouse Management System is designed for multi-tenant environments, allowing multiple businesses to operate independently and securely on the same infrastructure. Each tenant (store) has isolated data, ensuring complete privacy and security across the system. 
+The Warehouse Management System is a comprehensive solution designed to streamline and automate warehouse operations. It supports businesses in efficiently managing their inventory, tracking stock levels, handling product transfers between warehouses, and maintaining supplier and customer information.
 
-The system provides core features such as inventory tracking, warehouse transfers, product management, and supplier/customer handling.
+The system simplifies day-to-day warehouse workflows, reduces manual effort, and helps prevent common issues such as stockouts, overstocking, and inventory discrepancies. With built-in tools for monitoring inventory movements and setting up alerts or automated actions, it empowers warehouse managers to make informed decisions and maintain operational efficiency.
 
 Besides these core features, the system is built with a focus on reliability, and security:
 

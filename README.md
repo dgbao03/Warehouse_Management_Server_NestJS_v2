@@ -13,6 +13,7 @@ Besides these core features, the system is built with a focus on reliability, an
 
 - **Flexible RBAC (Role-Based Access Control)**  
   Roles and permissions are fully customizable per tenant, allowing fine-grained access to each feature based on business requirements.
+  A user can be assigned multiple roles, and custom roles can be created to fit specific organizational needs.
 
 - **Multi-Tenant Architecture**  
   Each store operates in a logically isolated context, ensuring data privacy. Tenant resolution is handled contextually, and database queries are scoped accordingly.
